@@ -1,0 +1,45 @@
+set nomodeline "don't execute set commands in files we open. srsly...
+  
+set visualbell "dat terminal strobe...
+
+set expandtab "spaces for tab columns
+set softtabstop=2 "how many columns we indent when tab is pressed
+set shiftwidth=2 "how many columns for << >> and autoindention
+set tabstop=2 "how many columns the tab character appears as
+
+set ignorecase "case insensitive search
+set smartcase "overrides ignorecase when capitals are used
+set hlsearch "highligh things we search for
+"map spacebar to noh (disable highlighting until next search)
+nnoremap <Space> :noh<CR>
+
+set laststatus=2 "always show status bar
+set ruler "show row/column in status bar
+set backspace=indent,eol,start "backspace over autoindent, backspace over line breaks, backspace over start of insert
+
+set relativenumber "show relative line numbers
+set number "show line numbers, overrides relativenumbers for the current line only
+
+filetype plugin indent on "turn on filetype detection, indent scripts, and filetype plugins
+syntax on "turn on syntax highlighting
+
+"change cursor shape between insert and normal mode in iterm2 and tmux
+if exists('$ITERM_PROFILE')
+  if exists('$TMUX')
+    let &t_SI = "\<Esc>[3 q" "vertical bar cursor in insert mode
+    let &t_EI = "\<Esc>[0 q" "block cursor in normal mode
+  else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7" "vertical bar cursor in insert mode
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7" "block cursor in normal mode
+  endif
+endif
+
+set background=dark
+let g:solarized_termtrans=1
+colorscheme solarized
+
+"navigate panes with ctrl-hjkl instead of ctrl-w hjkl
+map <C-h> <C-W>h
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-l> <C-W>l
