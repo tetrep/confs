@@ -4,7 +4,7 @@ PATH="${PATH}:${HOME}/.rvm/bin" # Add RVM to PATH for scripting
 PATH="${PATH}:${HOME}/bin" #dat binary
 PATH="${PATH}:${HOME}/Downloads/adt-bundle-mac-x86_64-20130729/sdk/platform-tools" #sweet, sweet, adb
 PATH="${PATH}:${HOME}/research/android/android-ndk-r9b" #dat nkd-build
-export PATH="/Users/balthazaar/.rbenv/bin:${PATH}"
+export PATH="${HOME}/.rbenv/bin:${PATH}"
 
 eval "$(rbenv init -)"
 
