@@ -10,14 +10,33 @@ eval "$(rbenv init -)"
 
 export EDITOR='vim'
 
-export PS1="[%(2L.+.)%(?..(%?%))%n@%m:%1~]%#:"
-
 export CLICOLOR=1
 
+#zsh auto complete
+autoload -U compinit && compinit
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u' 
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+
+#colors! %{%F{color}%}
+autoload -U colors && colors
+
+#left prompt [(127)username@computer:~]%:
+PS1="%{%F{red}%}%(2L.+.)%(?..(%?%))" #return value of previous command, if non 0
+PS1="${PS1}%{%F{default}%}[" #[
+PS1="${PS1}%{%F{yellow}%}%n%{%F{default}%}@%{%F{green}%}%m" #user@computer
+PS1="${PS1}%{%F{default}%}:%{%F{cyan}%}%1~" #folder
+PS1="${PS1}%{%F{default}%}]" #]
+PS1="${PS1}%{%F{default}%} %*" # HH:MM:SS
+PS1="${PS1}
+%{%F{blue}%}%#%{%F{default}%} " #% or #
+export PS1
+#right prompt HH:MM:SS
+#export RPROMPT="%*"
+
 #history settings
-HISTSIZE=1000
-SAVEHIST=1000
-HISTFILE='~/.history_zsh'
+export HISTSIZE=1000
+export SAVEHIST=1000
+export HISTFILE='~/.history_zsh'
 setopt INC_APPEND_HISTORY #append history as it occurs, rather than upon shell exit
 setopt SHARE_HISTORY #share history between running shells (doesn't fuck with !!)
 setopt EXTENDED_HISTORY #add time and how long command was run to history
