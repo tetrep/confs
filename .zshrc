@@ -4,7 +4,7 @@ PATH="${PATH}:${HOME}/.rvm/bin" # Add RVM to PATH for scripting
 PATH="${PATH}:${HOME}/bin" #dat binary
 PATH="${PATH}:${HOME}/Downloads/adt-bundle-mac-x86_64-20130729/sdk/platform-tools" #sweet, sweet, adb
 PATH="${PATH}:${HOME}/research/android/android-ndk-r9b" #dat nkd-build
-export PATH="${HOME}/.rbenv/bin:${PATH}"
+export PATH="/Users/balthazaar/.rbenv/bin:${PATH}"
 
 eval "$(rbenv init -)"
 
@@ -14,6 +14,7 @@ export CLICOLOR=1
 
 #zsh auto complete
 autoload -U compinit && compinit
+setopt COMPLETE_IN_WORD #try to complete at cursor
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u' 
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 
