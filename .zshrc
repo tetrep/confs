@@ -54,5 +54,3 @@ setopt HIST_REDUCE_BLANKS #removes meaningless whitespace while entering command
 if [ $ITERM_PROFILE ]; then
   precmd() { echo -ne "\033]0;${PWD##*/}\007"; }
 fi
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
