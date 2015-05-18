@@ -39,8 +39,8 @@ export PS1
 #export RPROMPT="%*"
 
 #history settings
-export HISTSIZE=1000
-export SAVEHIST=1000
+export HISTSIZE=1000000
+export SAVEHIST=1000000
 export HISTFILE="${HOME}/.history_zsh"
 setopt INC_APPEND_HISTORY # append history as it occurs, rather than upon shell exit
 setopt SHARE_HISTORY # share history between running shells (doesn't fuck with !!)
